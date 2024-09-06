@@ -1,8 +1,0 @@
-<script th:inline="javascript">
-    const sessionId = /*[[${sessionId}]]*/"sessionId";
-    if (!sessionId) {
-        alert("Session ID is missing. Please try again.");
-    } else {
-        stripe.redirectToCheckout({ sessionId: sessionId });
-    }
-</script>
