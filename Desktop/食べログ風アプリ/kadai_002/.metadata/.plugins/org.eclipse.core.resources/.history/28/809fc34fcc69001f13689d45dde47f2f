@@ -1,0 +1,22 @@
+package com.example.tabelog.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.tabelog.form.SignupForm;
+
+@Controller
+public class AuthController {
+    
+    @GetMapping("/login")
+    public String login() {
+        return "auth/login"; // ログイン画面のテンプレートを表示
+    }
+    
+    @GetMapping("/signup")
+    public String signup(Model model) {
+        model.addAttribute("signupForm", new SignupForm()); // サインアップフォームをモデルに追加
+        return "auth/signup"; // サインアップ画面のテンプレートを表示
+    }
+}
